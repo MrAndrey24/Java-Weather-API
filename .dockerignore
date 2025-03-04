@@ -1,0 +1,8 @@
+.gradle
+/build
+/.mvn
+/target
+/node_modules
+*.jar
+*.class
+*.log
