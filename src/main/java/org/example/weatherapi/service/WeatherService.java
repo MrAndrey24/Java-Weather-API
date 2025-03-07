@@ -22,7 +22,7 @@ public class WeatherService {
             ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
             return response.getBody();
         }catch (Exception e) {
-            throw new RuntimeException("Error while fetching weather data" + e.getMessage());
+            throw new RuntimeException("Error while fetching weather data " + e.getMessage());
         }
     }
 }
