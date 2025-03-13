@@ -25,6 +25,13 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
+bootJar {
+    archiveBaseName.set('weather-app')
+    archiveVersion.set('1.0.0')
+    archiveFileName.set('weather-app.1.0.0.jar')
+    launchScript()
+}
+
 tasks.named('test') {
     useJUnitPlatform()
 }
