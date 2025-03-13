@@ -1,6 +1,7 @@
 package org.example.weatherapi.service;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -16,6 +17,7 @@ public class WeatherService {
 
     private final RestTemplate restTemplate = new RestTemplate();
 
+    @Cacheable(value = "getWeather", key = "#city")
     public String getWeather(String city) {
         String url = String.format("%s/%s?unitGroup=metric&key=%s&contentType=json", baseUrl, city, apiKey);
         try {
